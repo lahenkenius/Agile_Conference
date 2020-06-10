@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Logged out{% endblock %}
+{% block content %}
+    <h1>Logout page</h1>
+    <p style="font-size: 20px">You are signed out now. Thank you for using our service!</p>
+{% endblock %}
+
+{% block footer %}
+    <p><a href="{% url "login" %}">Login</a>.</p>
+    <p><a href="{% url "home" %}">Home Page</a>.</p>
+{% endblock %}
+</html>

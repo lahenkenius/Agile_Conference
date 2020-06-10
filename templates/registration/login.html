@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+
+<h1 style="text-align: center">Log In as Attendee</h1>
+    <br>
+<form method="post" style=" text-align: center; position: relative; margin-right: 24%" action="{% url 'attendee_landing' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class=" btn btn-primary" type="submit">
+        Log In</button>
+</form>
+    <br>
+    <br>
+ <h1 style="text-align: center">Log In as Presenter</h1>
+    <form method="post" style=" text-align: center; position: relative; margin-right: 24%" action="{% url 'presenter_landing' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+   <button class=" btn btn-primary" type="submit" style="background-color: green; border-color: green">
+        Log In</button>
+    <br>
+    <br>
+</form>
+
+{% endblock  %}
+</html>

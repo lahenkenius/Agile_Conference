@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Agile Conference- Home Page{% endblock %}
+{% load static %}
+{% block content %}
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+
+   <body>
+   <style>
+       .thumbnail{
+            width: 250px;
+            border-width: thick;
+            border-color: black;
+            border-radius: 15px;
+
+        }
+        .links {
+            padding: 100px;
+        }
+    </style>
+   {% if user.is_authenticated %}
+       <div class="page-container">
+
+           <h2 class="top-menu" style="text-align: center">Hello {{ user.username }}!</h2>
+           <h1 style= "text-align:center">Welcome to the web home of the Agile Conference!</h1>
+
+       </div>
+    {% else %}
+       <div class="page-container">
+            <h1 class="" style="text-align: center">Welcome to the web home of the Agile Conference!</h1>
+       </div>
+   {% endif %}
+
+    <div class="links" style="padding:0px">
+       <!-- Example row of columns -->
+       <div class="row" >
+           <div class="col-md-3">
+               <div class="thumbnail">
+                   <div class="caption">
+                       <h2>View List of Presentations!</h2>
+                       <h4><a class="btn btn-primary" href="{% url 'presentations' %}"
+                             role="button" style = "background-color: red">Presentations</a></h4>
+                   </div>
+               </div>
+           </div>
+           {% if not user.is_authenticated %}
+           <div class="col-md-3">
+               <div class="thumbnail">
+                   <div class="caption" id="signup-login">
+                       <h2>Wanna Sign Up to Attend? </h2>
+                       <h4><a class="btn btn-primary" href="{% url 'signup' %}" role="button" style="background-color: yellow; color: black">Signup</a></h4>
+
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-3">
+               <div class="thumbnail">
+                   <div class="caption" id="signup-login">
+                       <h2>Already Signed Up?</h2>
+                       <h4><a class="btn btn-primary" href="{% url 'login' %}"
+                             role="button" style="background-color: green">Login</a></h4>
+                   </div>
+               </div>
+           </div>
+           {% endif %}
+       </div>
+       <div class="row">
+           <div class="col-md-3">
+               <div class="thumbnail">
+                   <div class="caption">
+                       <h2>Find out more about the Conference!</h2>
+                       <h4><a class="btn btn-primary" href="{% url 'about' %}"
+                             role="button" style="background-color: orange">About the Conference</a></h4>
+                   </div>
+               </div>
+           </div>
+            <div class="col-md-3">
+               <div class="thumbnail">
+                   <div class="caption">
+                       <h2>Contact Us!</h2>
+                       <h4><a class="btn btn-primary" href="{% url 'contact_us' %}"
+                             role="button" style="background-color: mediumpurple">Contact Us!</a></h4>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+
+
+
+   </body>
+
+{% endblock %}
+
+</html>

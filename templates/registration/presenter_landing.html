@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Agile Conference{% endblock %}
+{% block content %}
+<body>
+<h1 style="text-align: center">List of Presentations Signed Up For</h1>
+<table class= "table table-striped table-bordered table-hover" style= "font-size: 25px">
+    <thead style="background-color: aqua;">
+        <tr>
+        <td>Presentation ID</td>
+        <td>Description</td>
+        <td>Timeslot</td>
+        <td>Number of Total Slots</td>
+        <td>Number of Slots Remaining</td>
+        </tr>
+    </thead>
+    <tbody>
+    {% for presentation in presentations %}
+    {% if presenter_id == presentation.p_id %}
+    <tr>
+    <td>{{ presentation.presentation_id }}</td>
+                <td>{{ presentation.timeslot }}</td>
+                <td>{{ presentation.description }}</td>
+                <td>{{ presentation.location }}</td>
+                <td>{{ presentation.number_of_slots_remaining }}</td>
+                <td>{{ presentation.presenter_id_id}}</td>
+                <td>{{ presentation.cost }}</td>
+    {% endif %}
+    {% endfor %}
+    </tr>
+    </tbody>
+</table>
+</body>
+{% endblock %}
+</html>
