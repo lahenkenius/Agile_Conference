@@ -3,7 +3,13 @@
 {% extends 'base.html' %}
 {% block title %}Customer Order List {% endblock %}
 {% block content %}
-
+{% if not user.is_staff %}
+<html>
+    <head>
+        <meta http-equiv="refresh" content="0; url='{% url 'login_landing'%}'">
+    </head>
+{% else %}
+</html>
     <html>
     <head>
         <meta charset="UTF-8">
@@ -59,5 +65,6 @@
     </div>
     </body>
     </html>
+ {% endif %}
 {% endblock %}
 </html>

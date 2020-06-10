@@ -5,8 +5,8 @@
 {% block content %}
 <body>
     <h2>Hello {{ user.username }}</h2>
-    <h1 style="text-align: center">List of Presentations Signed Up For</h1>
-    <table class= "table table-striped table-bordered table-hover" style= "font-size: 25px">
+    <h1 style="text-align: center">List of Your Presentations</h1>
+    <table class= "table table-striped table-bordered table-hover" style= "font-size: 25px; margin-bottom: 240px;">
         <thead style="background-color: yellow;">
             <tr>
             <td>Presentation ID</td>
@@ -17,17 +17,17 @@
             </tr>
         </thead>
         <tbody>
-        {% for presentation in presentations %}
-        {% if presenter_id == presentation.p_id %}
-        <tr>
-        <td>{{ presentation.p_id }}</td>
-        <td>{{ presentation.description }}</td>
-        <td>{{ presentation.timeslot }}</td>
-        <td>{{ presentation.number_of_slots }}</td>
-        <td>{{ presentation.number_of_slots_remaining }}</td>
+        {% for presentation in presentation_list %}
+        {% if presentation.presenter_id_id == user.username %}
+            <tr>
+                <td>{{ presentation.presentation_id }}</td>
+                <td>{{ presentation.description }}</td>
+                <td>{{ presentation.timeslot }}</td>
+                <td>{{ presentation.number_of_slots }}</td>
+                <td>{{ presentation.number_of_slots_remaining }}</td>
+            </tr>
         {% endif %}
         {% endfor %}
-        </tr>
         </tbody>
     </table>
 </body>

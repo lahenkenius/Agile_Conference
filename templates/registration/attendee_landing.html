@@ -5,25 +5,26 @@
 {% block content %}
 <body>
 <h2>Hello {{ user.username }}</h2>
-<h1 style="text-align: center">List of Presentations Ordered</h1>
-<table class= "table table-striped table-bordered table-hover" style= "font-size: 25px">
+<h1 style="text-align: center">List of Presentations Registered For</h1>
+<table class= "table table-striped table-bordered table-hover" style= "font-size: 25px; margin-bottom: 240px;">
     <thead style="background-color: yellow;">
         <tr>
             <td>Presentation</td>
             <td>Timeslot</td>
             <td>Description</td>
-            <td>cancel</td>
+            <td>Cancel Registration</td>
         </tr>
     </thead>
 
     <tbody>
         {% for order in customer_orders %}
-        {% if order.attendee.username == user.username %}
+        {% if order.attendee_id == user.username %}
         <tr>
-            <td>{{ order.presentation.p_id }}</td>
+            <td>{{ order.presentation.presentation_id }}</td>
             <td>{{ order.presentation.timeslot }}</td>
             <td>{{ order.presentation.description }}</td>
-            <td><a href= {% url 'customer_order_delete'%}>Delete</a></td>
+            <td><a href= "{% url 'customer_order_delete' pk=order.pk%}"
+                   class="btn btn-danger">Delete</a></td>
         </tr>
         {% endif %}
         {% endfor %}

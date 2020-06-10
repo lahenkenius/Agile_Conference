@@ -90,10 +90,13 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a class="black-text" href="{% url 'home' %}">Home</a></li>
+                <li></li>
                 <li><a class = "black-text" href="{% url 'presentations' %}">Presentations</a></li>
                <li><a class= "black-text" href="{% url 'about' %}">About</a></li>
                 <li><a class= "black-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-
+                {% if user.is_authenticated %}
+                <li><a class= "black-text" href="{% url 'login_landing' %}">View Registrations</a></li>
+                {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right" style="font-size: 20px">
                 {% if user.is_authenticated %}
