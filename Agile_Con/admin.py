@@ -23,7 +23,8 @@ class PresentationList(admin.ModelAdmin):
 class CustomerOrderAdmin(admin.ModelAdmin):
     model = CustomerOrder
 
-admin.site.register(CustomerOrder)
+
+admin.site.register(CustomerOrder, CustomerOrderAdmin)
 admin.site.register(Presenter)
 admin.site.register(Attendee)
 admin.site.register(Presentation)
