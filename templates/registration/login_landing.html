@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        h1 {
+            font-size: 37px;
+        }
+        .landing-page {
+            text-align: center;
+            margin-right: 10px;
+            margin-bottom: 160px;
+            z-index: 9999;
+        }
+    </style>
+
+        <h1 style="text-align: center"> Select Your Role:</h1>
+        <br><br>
+        <div class="landing-page">
+            <a href="{% url 'presenter_landing' %}"><button class="btn btn-primary landing-page" style="font-size: 30px">Presenter
+            </button></a>
+        </div>
+
+            <br>
+        <div class="landing-page">
+            <a href="{% url 'attendee_landing' %}"><button class="btn btn-primary landing-page" style="font-size: 30px">Attendee
+            </button></a>
+        </div>
+{% endblock %}
+</html>

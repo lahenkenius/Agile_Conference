@@ -71,7 +71,13 @@ def presentations(request):
 
 def attendee_landing(request):
     customer_orders = CustomerOrder.objects.all()
-    return render(request, "registration/attendee_landing.html", {'customer_orders': customer_orders})
+    username = Attendee.username
+    return render(request, "registration/attendee_landing.html", {'customer_orders': customer_orders,
+                                                                  'username': username})
+
+
+def login_landing(request):
+    return render(request, "registration/login_landing.html")
 
 def presenter_landing(request):
     presenter_id = Presenter.presenter_id

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends 'base.html' %}
+{% block title %}Customer Order Edit{% endblock %}
 {% block content %}
     <h1>Edit Customer Order</h1>
     <form method="POST" class="customer-order-form">{% csrf_token %}

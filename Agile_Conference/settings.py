@@ -118,7 +118,7 @@ STATIC_URL = '/static/'
 
 #AUTH_USER_MODEL = 'Agile_Con.EmployeeAdmin'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/accounts/login/login_landing/'
 LOGOUT_URL = 'logout'
 
 MEDIA_URL = 'templates/../attendees/static/Images/'

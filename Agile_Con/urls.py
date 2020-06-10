@@ -20,5 +20,6 @@ urlpatterns = [
     path('contact_us/', views.contact_us, name="contact_us"),
     path('presentations/', views.presentations, name="presentations"),
     path('accounts/login/attendee_landing/', views.attendee_landing, name="attendee_landing"),
+    path('accounts/login/login_landing/', views.login_landing, name='login_landing'),
 
 ]
