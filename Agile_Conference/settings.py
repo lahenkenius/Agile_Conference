@@ -118,6 +118,8 @@ STATIC_URL = '/static/'
 
 #AUTH_USER_MODEL = 'Agile_Con.EmployeeAdmin'
 
+#AUTH_USER_MODEL = 'Users.DefaultUser'
+
 LOGIN_REDIRECT_URL = '/accounts/login/login_landing/'
 LOGOUT_URL = 'logout'
 

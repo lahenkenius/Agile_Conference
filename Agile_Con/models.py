@@ -18,10 +18,10 @@ class Presenter(models.Model):
 
 
 class Attendee(models.Model):
+    USERNAME_FIELD = 'attendee_id'
     attendee_id = models.CharField(primary_key=True, max_length=50, blank=False, null=False, default=' ')
     name = models.CharField(max_length=50, blank=False, null=False, default=' ')
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='attendees')
-
     def __str__(self):
         return self.attendee_id
 
