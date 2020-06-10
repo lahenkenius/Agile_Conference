@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Presenter, Attendee, Presentation
+from .models import Presenter, Attendee, Presentation, CustomerOrder
 
 class PresenterList(admin.ModelAdmin):
     list_display = ( 'presenter_id', 'name', 'user' )
@@ -20,7 +20,10 @@ class PresentationList(admin.ModelAdmin):
     search_fields = ( 'presenter_id', 'timeslot', 'cost' )
     ordering = ['presenter_id']
 
+class CustomerOrderAdmin(admin.ModelAdmin):
+    model = CustomerOrder
 
+admin.site.register(CustomerOrder)
 admin.site.register(Presenter)
 admin.site.register(Attendee)
 admin.site.register(Presentation)
