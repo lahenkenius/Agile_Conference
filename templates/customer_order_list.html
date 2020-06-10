@@ -45,8 +45,8 @@
             <tbody>
             {% for order in customer_orders %}
                 <tr>
-                    <td>{{ order.attendee.username }}</td>
-                    <td>{{ order.presentation.p_id }}</td>
+                    <td>{{ order.attendee.name }}</td>
+                    <td>{{ order.presentation.presentation_id }}</td>
                     <td>{{ order.presentation.timeslot }}</td>
                     <td>{{ order.presentation.cost }}</td>
                     <td>{{ order.presentation.location }}</td>
