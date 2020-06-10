@@ -3,10 +3,12 @@
 {% extends 'base.html' %}
 {% block title %}Customer Order Edit{% endblock %}
 {% block content %}
+ <div class="edit-page" style="margin-bottom: 240px; margin-left: 50px">
     <h1>Edit Customer Order</h1>
     <form method="POST" class="customer-order-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Update</button>
     </form>
+ </div>
 {% endblock %}
 </html>
